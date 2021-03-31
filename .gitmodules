@@ -7,6 +7,3 @@
 [submodule "services/websvc"]
 	path = services/websvc
 	url = git@github.com:loadlab-go/websvc.git
-[submodule "idl"]
-	path = idl
-	url = git@github.com:loadlab-go/idl.git
