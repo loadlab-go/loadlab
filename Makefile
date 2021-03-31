@@ -1,3 +1,5 @@
+all: submodule-update pb
+
 submodule-update:
 	git submodule update --init --recursive
 
