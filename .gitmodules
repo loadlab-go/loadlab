@@ -1,0 +1,12 @@
+[submodule "services/authsvc"]
+	path = services/authsvc
+	url = git@github.com:loadlab-go/authsvc.git
+[submodule "services/usersvc"]
+	path = services/usersvc
+	url = git@github.com:loadlab-go/usersvc.git
+[submodule "services/websvc"]
+	path = services/websvc
+	url = git@github.com:loadlab-go/websvc.git
+[submodule "idl"]
+	path = idl
+	url = git@github.com:loadlab-go/idl.git
