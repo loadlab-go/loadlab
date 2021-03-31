@@ -21,8 +21,14 @@ services:
     command:
       - "-etcd-endpoints=etcd-1:2379,etcd-2:2379,etcd-3:2379"
       - "-advertise-client=authsvc:8080"
+  db-usermgr:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-111111}
+      - POSTGRES_USER=${POSTGRES_USER:-loadlab}
+    ports:
+      - 15432:5432
   etcd-1:
-    container_name: etcd1
     image: quay.io/coreos/etcd:v3.4.15
     entrypoint: /usr/local/bin/etcd
     command:
@@ -42,7 +48,6 @@ services:
     volumes:
       - etcd1:/etcd-data
   etcd-2:
-    container_name: etcd2
     image: quay.io/coreos/etcd:v3.4.15
     entrypoint: /usr/local/bin/etcd
     command:
@@ -62,7 +67,6 @@ services:
     volumes:
       - etcd2:/etcd-data
   etcd-3:
-    container_name: etcd3
     image: quay.io/coreos/etcd:v3.4.15
     entrypoint: /usr/local/bin/etcd
     command:
