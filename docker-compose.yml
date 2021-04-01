@@ -15,6 +15,7 @@ services:
     command:
       - "-etcd-endpoints=etcd-1:2379,etcd-2:2379,etcd-3:2379"
       - "-advertise-client=usersvc:8080"
+      - "-postgres-dsn=postgres://loadlab:111111@db-usermgr/loadlab?sslmode=disable"
   authsvc:
     build: services/authsvc
     entrypoint: /authsvc
